@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLSL Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            color: #4cc9f0;
+            text-decoration: none;
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            border: 1px solid #4cc9f0;
+            border-radius: 8px;
+        }
+        
+        .back-btn::before {
+            content: "← ";
+        }
+        
+        h1 {
+            color: #4cc9f0;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            color: #b0b0d0;
+            margin-bottom: 30px;
+        }
+        
+        .package-section {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid #4cc9f0;
+        }
+        
+        .package-title {
+            color: #98c379;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .class-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .class-name {
+            color: #e06c75;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .class-desc {
+            color: #b0b0d0;
+            font-size: 0.9em;
+        }
+        
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .highlight {
+            color: #e06c75;
+        }
+        
+        .highlight-green {
+            color: #98c379;
+        }
+        
+        .highlight-blue {
+            color: #61afef;
+        }
+        
+        .highlight-yellow {
+            color: #e5c07b;
+        }
+        
+        .example-box {
+            background: rgba(76, 201, 240, 0.1);
+            border: 1px solid rgba(76, 201, 240, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .example-title {
+            color: #4cc9f0;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-btn">Back to Libraries</a>
+        
+        <h1>📁 FLSL Library v1.1</h1>
+        <p class="subtitle">Complete Java utility library with GUI, File I/O, Arrays, Strings and more</p>
+        
+        <div class="example-box">
+            <div class="example-title">Quick Import</div>
+            <div class="code-block">
+<span class="highlight">import</span> com.flsl.fileio.File;<br>
+<span class="highlight">import</span> com.flsl.utils.Arrays.Array;<br>
+<span class="highlight">import</span> com.flsl.utils.Arrays.Array2D;<br>
+<span class="highlight">import</span> com.flsl.utils.Arrays.Array3D;<br>
+<span class="highlight">import</span> com.flsl.utils.string.StringProcessor;<br>
+<span class="highlight">import</span> com.flsl.FGUI.fgui.*;<br>
+<span class="highlight">import</span> com.flsl.keyIO.*;
+            </div>
+        </div>
+        
+        <!-- File I/O Package -->
+        <div class="package-section">
+            <div class="package-title">📂 File I/O (com.flsl.fileio)</div>
+            <div class="class-grid">
+                <div class="class-item">
+                    <div class="class-name">File</div>
+                    <div class="class-desc">File operations and utilities</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">Reader</div>
+                    <div class="class-desc">Read files with ReadOperation</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">Writer</div>
+                    <div class="class-desc">Write files with WriteOperation</div>
+                </div>
+            </div>
+            
+            <div class="code-block">
+<span class="highlight">// File operations example</span><br>
+<span class="highlight-green">File</span> file = <span class="highlight">new</span> <span class="highlight-green">File</span>(<span class="highlight-blue">"data.txt"</span>);<br>
+<span class="highlight-green">String</span> content = file.readAll();<br>
+file.write(<span class="highlight-blue">"Hello World"</span>);<br>
+<span class="highlight-green">boolean</span> exists = file.exists();
+            </div>
+        </div>
+        
+        <!-- Arrays Package -->
+        <div class="package-section">
+            <div class="package-title">🔢 Arrays (com.flsl.utils.Arrays)</div>
+            <div class="class-grid">
+                <div class="class-item">
+                    <div class="class-name">Array</div>
+                    <div class="class-desc">1D array utilities and operations</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">Array2D</div>
+                    <div class="class-desc">2D array/matrix operations</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">Array3D</div>
+                    <div class="class-desc">3D array operations</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">Consumer</div>
+                    <div class="class-desc">Functional interface for operations</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">Predicate</div>
+                    <div class="class-desc">Functional interface for filtering</div>
+                </div>
+            </div>
+            
+            <div class="code-block">
+<span class="highlight">// Array examples</span><br>
+<span class="highlight-green">Array</span> arr = <span class="highlight">new</span> <span class="highlight-green">Array</span>(<span class="highlight">new int</span>[]{1, 2, 3, 4, 5});<br>
+<span class="highlight-green">int</span>[] sorted = arr.sort();<br>
+<span class="highlight-green">int</span> max = arr.max();<br>
+<span class="highlight-green">int</span> sum = arr.sum();<br><br>
+<span class="highlight">// 2D Array example</span><br>
+<span class="highlight-green">Array2D</span> matrix = <span class="highlight">new</span> <span class="highlight-green">Array2D</span>(3, 3);<br>
+matrix.fill(0);<br>
+matrix.set(1, 1, 5);<br>
+<span class="highlight-green">int</span> value = matrix.get(1, 1);
+            </div>
+        </div>
+        
+        <!-- GUI Package -->
+        <div class="package-section">
+            <div class="package-title">🖥️ GUI Framework (com.flsl.FGUI.fgui)</div>
+            <div class="class-grid">
+                <div class="class-item">
+                    <div class="class-name">FButton</div>
+                    <div class="class-desc">Custom button component</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">FFrame</div>
+                    <div class="class-desc">Main application window</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">FPanel</div>
+                    <div class="class-desc">Container panel</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">FTextField</div>
+                    <div class="class-desc">Text input field</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">FTextEditor</div>
+                    <div class="class-desc">Text editor component</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">FLabel</div>
+                    <div class="class-desc">Label component</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">FMenu</div>
+                    <div class="class-desc">Menu system</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">FComponent</div>
+                    <div class="class-desc">Base GUI component</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">FDrawer</div>
+                    <div class="class-desc">Drawing utilities</div>
+                </div>
+            </div>
+            
+            <div class="code-block">
+<span class="highlight">// GUI example</span><br>
+<span class="highlight-green">FFrame</span> frame = <span class="highlight">new</span> <span class="highlight-green">FFrame</span>(<span class="highlight-blue">"My App"</span>);<br>
+<span class="highlight-green">FButton</span> button = <span class="highlight">new</span> <span class="highlight-green">FButton</span>(<span class="highlight-blue">"Click Me"</span>);<br>
+<span class="highlight-green">FTextField</span> textField = <span class="highlight">new</span> <span class="highlight-green">FTextField</span>(20);<br><br>
+button.addActionListener(e -> {<br>
+&nbsp;&nbsp;<span class="highlight-green">String</span> text = textField.getText();<br>
+&nbsp;&nbsp;System.out.println(<span class="highlight-blue">"Entered: "</span> + text);<br>
+});<br><br>
+frame.add(button);<br>
+frame.add(textField);<br>
+frame.setVisible(<span class="highlight">true</span>);
+            </div>
+        </div>
+        
+        <!-- String Processing -->
+        <div class="package-section">
+            <div class="package-title">📝 String Processing (com.flsl.utils.string)</div>
+            <div class="class-grid">
+                <div class="class-item">
+                    <div class="class-name">StringProcessor</div>
+                    <div class="class-desc">String manipulation utilities</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">StringScanner</div>
+                    <div class="class-desc">String parsing and scanning</div>
+                </div>
+            </div>
+            
+            <div class="code-block">
+<span class="highlight">// String processing example</span><br>
+<span class="highlight-green">StringProcessor</span> sp = <span class="highlight">new</span> <span class="highlight-green">StringProcessor</span>();<br>
+<span class="highlight-green">String</span> reversed = sp.reverse(<span class="highlight-blue">"Hello"</span>);<br>
+<span class="highlight-green">String</span> trimmed = sp.trimAll(<span class="highlight-blue">"  Hello  World  "</span>);<br>
+<span class="highlight-green">boolean</span> isNumeric = sp.isNumeric(<span class="highlight-blue">"123"</span>);<br>
+<span class="highlight-green">String</span>[] words = sp.splitWords(<span class="highlight-blue">"Hello World Java"</span>);
+            </div>
+        </div>
+        
+        <!-- Input Handling -->
+        <div class="package-section">
+            <div class="package-title">🖱️ Input Handling (com.flsl.keyIO)</div>
+            <div class="class-grid">
+                <div class="class-item">
+                    <div class="class-name">KeyInput</div>
+                    <div class="class-desc">Keyboard input handling</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">MouseInput</div>
+                    <div class="class-desc">Mouse input handling</div>
+                </div>
+            </div>
+            
+            <div class="code-block">
+<span class="highlight">// Input handling example</span><br>
+<span class="highlight-green">KeyInput</span> keyInput = <span class="highlight">new</span> <span class="highlight-green">KeyInput</span>();<br>
+keyInput.addKeyListener(<span class="highlight">new</span> <span class="highlight-green">KeyAdapter</span>() {<br>
+&nbsp;&nbsp;<span class="highlight">public void</span> <span class="highlight-blue">keyPressed</span>(<span class="highlight-green">KeyEvent</span> e) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">if</span> (e.getKeyCode() == <span class="highlight-green">KeyEvent</span>.VK_ENTER) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="highlight-blue">"Enter pressed"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+});<br><br>
+<span class="highlight-green">MouseInput</span> mouseInput = <span class="highlight">new</span> <span class="highlight-green">MouseInput</span>();<br>
+mouseInput.addClickListener(<span class="highlight">event</span> -> {<br>
+&nbsp;&nbsp;System.out.println(<span class="highlight-blue">"Clicked at: "</span> + event.getX() + <span class="highlight-blue">", "</span> + event.getY());<br>
+});
+            </div>
+        </div>
+        
+        <!-- Other Packages -->
+        <div class="package-section">
+            <div class="package-title">🔧 Other Utilities</div>
+            <div class="class-grid">
+                <div class="class-item">
+                    <div class="class-name">Documentation (DocMan)</div>
+                    <div class="class-desc">DocUtils, DocIO, DocBuilder</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">Logging (flog)</div>
+                    <div class="class-desc">FRead, FWrite for logging</div>
+                </div>
+                <div class="class-item">
+                    <div class="class-name">Codec</div>
+                    <div class="class-desc">Encoding/decoding utilities</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Complete Example -->
+        <div class="package-section">
+            <div class="package-title">🎯 Complete Example</div>
+            <div class="code-block">
+<span class="highlight">import</span> com.flsl.fileio.File;<br>
+<span class="highlight">import</span> com.flsl.utils.Arrays.Array;<br>
+<span class="highlight">import</span> com.flsl.FGUI.fgui.*;<br><br>
+<span class="highlight">public class</span> <span class="highlight-green">FLSLDemo</span> {<br>
+&nbsp;&nbsp;<span class="highlight">public static void</span> <span class="highlight-blue">main</span>(<span class="highlight-green">String</span>[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">// File operations</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight-green">File</span> config = <span class="highlight">new</span> <span class="highlight-green">File</span>(<span class="highlight-blue">"config.txt"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight-green">String</span> settings = config.readAll();<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">// Array operations</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight-green">Array</span> numbers = <span class="highlight">new</span> <span class="highlight-green">Array</span>(<span class="highlight">new int</span>[]{5, 2, 8, 1, 9});<br>
+&nbsp;&nbsp;&nbsp;&nbsp;numbers.sort();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="highlight-blue">"Max: "</span> + numbers.max());<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">// GUI application</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight-green">FFrame</span> app = <span class="highlight">new</span> <span class="highlight-green">FFrame</span>(<span class="highlight-blue">"FLSL Demo"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight-green">FButton</span> btn = <span class="highlight">new</span> <span class="highlight-green">FButton</span>(<span class="highlight-blue">"Process Data"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;app.add(btn);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;app.setSize(400, 300);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;app.setVisible(<span class="highlight">true</span>);<br>
+&nbsp;&nbsp;}<br>
+}
+            </div>
+        </div>
+        
+        <!-- Installation -->
+        <div class="package-section">
+            <div class="package-title">📦 Installation</div>
+            <div class="code-block">
+<span class="highlight">// 1. Add FLSL_Release-1.1.jar to classpath</span><br>
+javac -cp <span class="highlight-blue">"FLSL_Release-1.1.jar"</span> MyApp.java<br>
+java -cp <span class="highlight-blue">"FLSL_Release-1.1.jar:."</span> MyApp<br><br>
+<span class="highlight">// 2. Or add to IDE project libraries</span><br>
+<span class="highlight">// 3. All classes are in com.flsl.* packages</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
