@@ -19,5 +19,26 @@
       "Auto-arranging multiple notifications",
       "Always on top without stealing focus"
     ]
+  },
+  {
+    "ID": "1",
+    "name": "FLSL Library",
+    "filename": "FLSL_Release-1.1.jar",
+    "download": "./Libs/FLSL_Release-1.1.jar",
+    "documentation": "./docs/flsl.html",
+    "version": "1.1",
+    "description": "FLSL Libraries - File I/O, Arrays, and utility functions for Java",
+    "tags": ["FileIO", "Utilities", "Arrays", "String-Processing", "Utils"],
+    "size": "52.0 KB",
+    "javaVersion": "Java 8+",
+    "lastUpdated": "2026-02-10",
+    "author": "Homesoft",
+    "features": [
+      "File input/output utilities",
+      "Arrays with Array, Array2D, Array3D",
+      "String Processing",
+      "String utilities",
+      "Lightweight and fast"
+    ]
   }
 ]
