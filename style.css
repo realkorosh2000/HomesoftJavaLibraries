@@ -233,6 +233,29 @@ body {
   }
 }
 
+/* Features list */
+.lib-features {
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature {
+    color: #98c379;
+    margin: 5px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.feature::before {
+    content: "✓ ";
+    margin-right: 8px;
+    font-weight: bold;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
