@@ -4,10 +4,11 @@
     "name": "Noticer",
     "filename": "Noticer.jar",
     "download": "./Libs/Noticer.jar",
+    "documentation": "./docs/noticer.html",
     "version": "1.0",
     "description": "Java desktop notification library with animations and CD-quality sounds",
     "tags": ["GUI", "Notifications", "Swing", "Desktop", "Animation", "Sound"],
-    "size": "13.2 KB",
+    "size": "48.9 KB",
     "javaVersion": "Java 8+",
     "lastUpdated": "2026-02-10",
     "author": "Homesoft",
@@ -16,8 +17,7 @@
       "Smooth slide animations",
       "High-quality sound effects",
       "Auto-arranging multiple notifications",
-      "Always on top without stealing focus",
-      "Customizable size and duration"
+      "Always on top without stealing focus"
     ]
   }
 ]
